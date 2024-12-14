@@ -1,0 +1,253 @@
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: Arial, sans-serif;
+}
+
+body {
+   overflow: hidden;
+   background: linear-gradient(45deg, #ff7e5f, #feb47b); /* Updated gradient */
+   color: #fff;
+}
+
+/* Header */
+.header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 15px 30px;
+   background: linear-gradient(45deg, #ff7e5f, #feb47b); /* Updated gradient */
+   color: #fff;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.u-name {
+   font-size: 20px;
+   padding-left: 17px;
+}
+
+.u-name b {
+   color: #00aaff;
+}
+
+.header i {
+   font-size: 30px;
+   cursor: pointer;
+   color: #fff;
+}
+
+.header i:hover {
+   color: #00aaff;
+}
+
+/* Sidebar */
+.side-bar {
+   width: 250px;
+   background: linear-gradient(45deg, #ff7e5f, #feb47b); /* Updated gradient */
+   min-height: 100vh;
+   transition: 500ms width;
+   box-shadow: 3px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.user-p {
+   text-align: center;
+   padding-left: 10px;
+   padding-top: 25px;
+}
+
+.user-p img {
+   width: 80px;
+   border-radius: 50%;
+}
+
+.user-p h4 {
+   color: #ccc;
+   padding: 5px 0;
+}
+
+.side-bar ul {
+   margin-top: 20px;
+   list-style: none;
+}
+
+.side-bar ul li {
+   font-size: 16px;
+   padding: 15px 0;
+   padding-left: 20px;
+   transition: 500ms background;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+.side-bar ul li:hover {
+   background: #00aaff;
+}
+
+.side-bar ul li a {
+   text-decoration: none;
+   color: #eee;
+   cursor: pointer;
+   letter-spacing: 1px;
+}
+
+.side-bar ul li a i {
+   display: inline-block;
+   padding-right: 10px;
+   font-size: 23px;
+}
+
+/* Main Content */
+.body {
+   display: flex;
+   overflow: hidden;
+}
+
+.section-1 {
+   width: 100%;
+   background: linear-gradient(45deg, #ff7e5f, #feb47b); /* Updated gradient */
+   background-size: cover;
+   background-position: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   padding: 50px;
+}
+
+.section-1 h1 {
+   color: #fff;
+   font-size: 40px;
+   text-align: center;
+   margin: 10px 20px;
+}
+
+.section-1 p {
+   color: #00aaff;
+   font-size: 18px;
+   background: #333;
+   padding: 7px;
+   border-radius: 5px;
+   text-align: center;
+   max-width: 90%;
+}
+
+/* Responsive Button and Sidebar Adjustments */
+#navbtn {
+   display: inline-block;
+   margin-left: 20px;
+   font-size: 20px;
+   transition: 500ms color;
+}
+
+#checkbox {
+   display: none;
+}
+
+#checkbox:checked ~ .body .side-bar {
+   width: 60px;
+}
+
+#checkbox:checked ~ .body .side-bar .user-p {
+   visibility: hidden;
+}
+
+#checkbox:checked ~ .body .side-bar a span {
+   display: none;
+}
+
+/* Buttons */
+.edit_btn, .del_btn {
+   text-decoration: none;
+   padding: 5px 10px;
+   color: white;
+   border-radius: 20px;
+   display: inline-block;
+   font-size: 14px;
+   text-align: center;
+   margin: 5px;
+}
+
+.edit_btn {
+   background: #009688;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.del_btn {
+   background: #e74c3c;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.edit_btn:hover, .del_btn:hover {
+   transform: scale(1.05);
+}
+
+/* Sidebar Transition Effects */
+.side-bar ul li:hover {
+   background: #00aaff;
+   transition: background-color 0.3s ease;
+}
+
+/* Responsive Design using Media Queries */
+@media (max-width: 768px) {
+   .header {
+      flex-direction: column;
+      align-items: flex-start;
+   }
+
+   .u-name {
+      font-size: 18px;
+   }
+
+   .side-bar {
+      width: 200px;
+   }
+
+   .section-1 h1 {
+      font-size: 30px;
+   }
+
+   .section-1 p {
+      font-size: 16px;
+   }
+
+   .user-p img {
+      width: 60px;
+   }
+}
+
+@media (max-width: 576px) {
+   .side-bar {
+      width: 100%;
+      position: fixed;
+      height: auto;
+      bottom: 0;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+   }
+
+   .side-bar ul {
+      display: flex;
+      flex-direction: row;
+      padding: 0;
+   }
+
+   .side-bar ul li {
+      padding: 10px;
+      text-align: center;
+   }
+
+   .section-1 {
+      padding: 10px;
+   }
+
+   .header {
+      padding: 10px 20px;
+   }
+
+   .u-name {
+      font-size: 16px;
+   }
+}
